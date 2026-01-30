@@ -27,7 +27,7 @@ publishing {
     publications {
         create<MavenPublication>("maven") {
             groupId = project.group.toString()
-            artifactId = project.name.lowercase()
+            artifactId = "extension-kotlin"
             version = project.version.toString()
             from(components["java"])
         }
