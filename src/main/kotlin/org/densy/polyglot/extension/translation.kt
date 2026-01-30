@@ -68,6 +68,24 @@ operator fun Translation.get(key: String): String {
 }
 
 /**
+ * Translates with parameters using default language.
+ *
+ * Usage: translation["hello", keyedOf("name" to "John Doe")]
+ */
+operator fun Translation.get(key: String, parameters: TranslationParameters): String {
+    return translate(defaultLanguage, key, parameters)
+}
+
+/**
+ * Translates with array parameters using default language.
+ *
+ * Usage: translation["hello", arrayOf("John", 25)]
+ */
+operator fun Translation.get(key: String, vararg parameters: Any): String {
+    return translate(defaultLanguage, key, parameters)
+}
+
+/**
  * Translates using specific language.
  *
  * Usage: translation[ENG, "hello"]
